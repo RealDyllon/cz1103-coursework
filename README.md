@@ -1,4 +1,4 @@
-# cz1103-coursework
+# Coursework for CZ1103 / CE1103 / CX1103 
 
 ## Part 1 
 Contains Python lab code
