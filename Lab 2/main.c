@@ -112,7 +112,7 @@ int digitPos1(int num, int digit)
     num = num / 10;
   } while (num > 0);
 
-  return digit; // to shut clang up
+  return digit;
 }
 
 void digitPos2(int num, int digit, int *result)
@@ -133,9 +133,16 @@ void digitPos2(int num, int digit, int *result)
 int square1(int num)
 {
   /* Write your code here */
-  return 0; // to shut clang up
+  int sqr = 0;
+
+  sqr = pow(num, 2);
+  return sqr;
 }
 void square2(int num, int *result)
 {
   /* Write your code here */
+  int sqr = 0;
+
+  sqr = pow(num, 2);
+  *result = sqr;
 }
