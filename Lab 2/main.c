@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+
 /* function prototypes */
 int numDigits1(int num);
 int digitPos1(int num, int digit);
@@ -134,15 +134,24 @@ int square1(int num)
 {
   /* Write your code here */
   int sqr = 0;
+  int i;
 
-  sqr = pow(num, 2);
+  for (i = 1; i <= num; ++i)
+  {
+    sqr = sqr + 2 * i - 1;
+  }
   return sqr;
 }
 void square2(int num, int *result)
 {
   /* Write your code here */
   int sqr = 0;
+  int i;
 
-  sqr = pow(num, 2);
+  for (i = 1; i <= num; ++i)
+  {
+    sqr = sqr + 2 * i - 1;
+  }
+
   *result = sqr;
 }
