@@ -56,17 +56,16 @@ void initialize(int *size, int ar[])
 {
   // ask user to
   printf("Enter the total number of integers (MAX=10)\n");
-  scanf("%d", size);
-
-  printf for (int i = 0; i < *size; i++)
+  for (int i = 0; i < *size; i++)
   {
     // TODO
-    scanf("%d", &ar[i]);
+    // ar[i] =
   }
-  printf("values entered\n");
+  printf("values entered")
 }
 void insert(int max, int *size, int ar[], int num)
 {
+
   if (*size == max)
   { // size should always be <= max; never greater
     printf("The array is full\n");
