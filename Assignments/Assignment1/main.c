@@ -55,15 +55,18 @@ void display(int size, int ar[])
 void initialize(int *size, int ar[])
 {
   // ask user to
-  printf("Enter the total number of integers (MAX=10)\n");
-  scanf("%d", size);
+  *size = 0;
+  printf("Enter the total number of integers (MAX=10):\n");
+  int inputCount;
+  scanf("%d", &inputCount);
 
-  printf for (int i = 0; i < *size; i++)
+  printf("Enter the integers:\n");
+  for (int i = 0; i < inputCount; i++)
   {
-    // TODO
-    scanf("%d", &ar[i]);
+    int num;
+    scanf("%d", &num);
+    insert(MAX, size, ar, num);
   }
-  printf("values entered\n");
 }
 void insert(int max, int *size, int ar[], int num)
 {
@@ -73,46 +76,56 @@ void insert(int max, int *size, int ar[], int num)
   }
   else
   {
-    ar[*size] = num;
     ++*size;
+    for (int i = 0; i < *size; i++)
+    {
+      if (i == *size - 1) // if we're at the last element of the extended array (beyond the original array)
+      {
+        ar[i] = num;
+      }
+      else if (num <= ar[i])
+      {
+        // * make space for the new element
+        for (int j = *size - 1; j > i; --j)
+        {
+          ar[j] = ar[j - 1];
+        }
+
+        // * insert new element
+        ar[i] = num;
+        break; // our work is done, end the loop
+      }
+    }
   }
 }
 void iremove(int *size, int ar[], int num)
 {
 
-  if (*size == 0)
+  if (*size == 0) // * if our array is empty
   {
     printf("The array is empty\n");
   }
   else
-  {
-    // array is not empty
-
+  { // * array is not empty
     // iterate thru the array till the desired value is found - store the index
 
-    int found = 0;
+    int found = 0; // bool
     for (int i = 0; i <= *size; i++)
     {
-      if (num == ar[*size])
+      if (num == ar[i])
       {
         found = 1;
         for (int j = i; j < *size; j++)
         {
           ar[j] = ar[j + 1];
         }
-        break; // kills the for loop
+        --*size; // shrink time!
+        break;   // kills the for loop
       }
     }
 
-    // TODO: MAKE THIS TERNARY
-    if (found == 1)
-    {
-      printf("The integer is removed\n");
-    }
-    else
-    {
-      printf("The number is not in the array/n");
-    }
-    // for the
+    // TODO: MAKE THIS TERNARY // done
+    (found == 1) ? printf("The integer is removed\n")
+                 : printf("The number is not in the array\n");
   }
 }
