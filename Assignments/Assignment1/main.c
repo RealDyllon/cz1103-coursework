@@ -67,6 +67,15 @@ void initialize(int *size, int ar[])
     scanf("%d", &num);
     insert(MAX, size, ar, num);
   }
+
+  /* 
+ int total, i, num;
+printf("Enter the total number of integers (MAX=%d): \n", MAX); scanf("%d", &total);
+(*size) = 0;
+printf("Enter the integers: \n");
+for (i = 0; i < total; i++) { scanf("%d", &num); insert(MAX, size, ar, num);
+}
+  */
 }
 void insert(int max, int *size, int ar[], int num)
 {
@@ -110,7 +119,7 @@ void iremove(int *size, int ar[], int num)
     // iterate thru the array till the desired value is found - store the index
 
     int found = 0; // bool
-    for (int i = 0; i <= *size; i++)
+    for (int i = 0; i < *size; i++)
     {
       if (num == ar[i])
       {
@@ -119,6 +128,8 @@ void iremove(int *size, int ar[], int num)
         {
           ar[j] = ar[j + 1];
         }
+        ar[*size - 1] = 0; // clear out-of-bounds memory // ? do we need this?
+
         --*size; // shrink time!
         break;   // kills the for loop
       }
