@@ -6,7 +6,7 @@ Write a C program that computes the volume and surface area of a cylinder. The p
 
 Sample input and output sessions are given below:
 
-### (1) Test Case 1:
+### (1) Test Case 1
 
 Enter the radius:
 _5_
@@ -15,7 +15,7 @@ _8_
 The volume is: 628.32
 The surface area is: 408.41
 
-### (2) Test Case 2:
+### (2) Test Case 2
 
 Enter the radius:
 _1_
