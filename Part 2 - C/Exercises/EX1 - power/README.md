@@ -9,23 +9,15 @@ Sample input and output sessions are given below:
 ### (1) Test Case 1
 
 Enter the current:
-
 _12_
-
 Enter the resistance:
-
 _1.5_
-
 The power loss: 216.00
 
 ### (2) Test Case 2
 
 Enter the current:
-
 _5_
-
 Enter the resistance:
-
 _0.5_
-
 The power loss: 12.50
